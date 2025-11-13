@@ -25,7 +25,7 @@ int main() {
     std::cout << "Sprawdzenie do tylu:" << std::endl;
     myList.display_backward();
     std::cout << "--------------------" << std::endl;
-    
+
 // TEST 4//
     std::cout << "Test 4: Usuwanie elementow (pop_front, pop_back)" << std::endl;
     
@@ -50,6 +50,43 @@ int main() {
     myList.pop_front(); // Powinien pojawić się komunikat "Lista jest pusta..."
     myList.pop_back();  // Powinien pojawić się komunikat "Lista jest pusta..."
     std::cout << "--------------------" << std::endl;
+
+// --- NOWY TEST ---
+    std::cout << "Test 5: Operacje na indeksach (insert, remove_at)" << std::endl;
+    LinkedList<int> indexList;
+    indexList.push_back(100);
+    indexList.push_back(200);
+    indexList.push_back(300);
+    std::cout << "Lista poczatkowa:" << std::endl;
+    indexList.display_forward(); // Powinno być: 100 -> 200 -> 300 -> NULL
+    std::cout << "--------------------" << std::endl;
+
+    std::cout << "Test wstawiania:" << std::endl;
+    indexList.insert(5, 0); // Wstaw na początek
+    indexList.display_forward(); // 5 -> 100 -> 200 -> 300
+    
+    indexList.insert(999, 4); // Wstaw na koniec (size=4)
+    indexList.display_forward(); // 5 -> 100 -> 200 -> 300 -> 999
+    
+    indexList.insert(150, 2); // Wstaw w środek
+    indexList.display_forward(); // 5 -> 100 -> 150 -> 200 -> 300 -> 999
+    
+    indexList.insert(1, -1); // Zły indeks (błąd)
+    std::cout << "--------------------" << std::endl;
+
+    std::cout << "Test usuwania:" << std::endl;
+    indexList.remove_at(0); // Usuń z początku
+    indexList.display_forward(); // 100 -> 150 -> 200 -> 300 -> 999
+    
+    indexList.remove_at(4); // Usuń z końca (size=5, index 4)
+    indexList.display_forward(); // 100 -> 150 -> 200 -> 300
+
+    indexList.remove_at(2); // Usuń ze środka
+    indexList.display_forward(); // 100 -> 150 -> 300
+
+    indexList.remove_at(99); // Zły indeks (błąd)
+    std::cout << "--------------------" << std::endl;
+
 
     return 0;
 }

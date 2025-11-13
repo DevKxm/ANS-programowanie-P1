@@ -4,42 +4,33 @@
 
 template <typename T>
 class LinkedList {
+// --- SEKCJA PRYWATNA ---
 private:
     Node<T>* head;
     Node<T>* tail;
     int size;
 
+    /**
+     * @brief Zwraca wskaźnik na węzeł pod podanym indeksem.
+     */
+    Node<T>* get_node(int index);
+
+// --- SEKCJA PUBLICZNA ---
 public:
     LinkedList();
     ~LinkedList();
 
-    /**
-     * @brief Dodaje element na koniec listy.
-     */
+    // Metody dodające
     void push_back(T data);
-
-    /**
-     * @brief Wyświetla całą listę od początku do końca.
-     */
-    void display_forward();
-
-    /**
-     * @brief Dodaje element na początek listy.
-     */
     void push_front(T data);
+    void insert(T data, int index);
 
-    /**
-     * @brief Wyświetla całą listę od końca do początku.
-     */
-    void display_backward();
-
-    /**
-     * @brief Usuwa element z początku listy.
-     */
-    void pop_front();
-
-    /**
-     * @brief Usuwa element z końca listy.
-     */
+    // Metody usuwające
     void pop_back();
+    void pop_front();
+    void remove_at(int index);
+    
+    // Metody wyświetlające
+    void display_forward();
+    void display_backward();
 };
