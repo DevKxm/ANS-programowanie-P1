@@ -51,7 +51,7 @@ int main() {
     myList.pop_back();  // Powinien pojawić się komunikat "Lista jest pusta..."
     std::cout << "--------------------" << std::endl;
 
-// --- NOWY TEST ---
+// --- 5 TEST ---
     std::cout << "Test 5: Operacje na indeksach (insert, remove_at)" << std::endl;
     LinkedList<int> indexList;
     indexList.push_back(100);
@@ -87,6 +87,28 @@ int main() {
     indexList.remove_at(99); // Zły indeks (błąd)
     std::cout << "--------------------" << std::endl;
 
+
+    // --- NOWY TEST ---
+    std::cout << "Test 6: Czyszczenie listy (clear)" << std::endl;
+    indexList.display_forward(); // Powinno być: 100 -> 150 -> 300
+    
+    std::cout << "Wywoluje clear()..." << std::endl;
+    indexList.clear(); // Czyści resztę listy
+    
+    indexList.display_forward(); // Powinno być: NULL
+    std::cout << "--------------------" << std::endl;
+
+    // Test destruktora:
+    std::cout << "Test 7: Destruktor (automatyczne czyszczenie)" << std::endl;
+    {
+        LinkedList<int> scopeList;
+        scopeList.push_back(1);
+        scopeList.push_back(2);
+        std::cout << "Lista 'scopeList' zaraz zostanie zniszczona:" << std::endl;
+        scopeList.display_forward();
+    } 
+    
+    std::cout << "--------------------" << std::endl;
 
     return 0;
 }

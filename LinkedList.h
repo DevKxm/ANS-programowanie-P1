@@ -11,7 +11,7 @@ private:
     int size;
 
     /**
-     * @brief Zwraca wskaźnik na węzeł pod podanym indeksem.
+     * @brief Zwraca wskaźnik na węzeł pod podanym indeksem
      */
     Node<T>* get_node(int index);
 
@@ -29,6 +29,7 @@ public:
     void pop_back();
     void pop_front();
     void remove_at(int index);
+    void clear(); // NOWA METODA
     
     // Metody wyświetlające
     void display_forward();

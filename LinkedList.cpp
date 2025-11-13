@@ -12,7 +12,7 @@ LinkedList<T>::LinkedList() {
 // --- (DESTRUKTOR) ---
 template <typename T>
 LinkedList<T>::~LinkedList() {
-    // Na razie jest pusty
+    clear();
 }
 
 // --- METODA 1: push_back ---
@@ -134,7 +134,7 @@ Node<T>* LinkedList<T>::get_node(int index) {
         return nullptr; // Zły indeks
     }
 
-
+    // Optymalizacja: jeśli indeks jest w pierwszej połowie listy,
     // szuka od 'head'. W przeciwnym razie - od 'tail'.
     Node<T>* current;
     if (index < size / 2) {
@@ -226,6 +226,18 @@ void LinkedList<T>::remove_at(int index) {
     delete nodeToRemove;
     size--;
 }
+
+template <typename T>
+void LinkedList<T>::clear() {
+    std::cout << "Czyszczenie listy..." << std::endl;
+
+    // Wywołuje pop_front(), dopóki lista nie będzie pusta
+    while (head != nullptr) {
+        pop_front();
+    }
+    std::cout << "Lista wyczyszczona." << std::endl;
+}
+
 
 // --- POPRAWKA BŁĘDU LINKERA ---
 template class LinkedList<int>;
