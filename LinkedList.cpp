@@ -1,4 +1,5 @@
 #include "LinkedList.h"
+#include "ListFactory.h"
 #include <iostream> 
 
 // --- (KONSTRUKTOR) ---
@@ -255,3 +256,4 @@ ListIterator<T> LinkedList<T>::end() {
 template class LinkedList<int>;
 template class Node<int>;
 template class ListIterator<int>;
+template class ListFactory<int>;
