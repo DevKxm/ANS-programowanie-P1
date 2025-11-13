@@ -238,7 +238,20 @@ void LinkedList<T>::clear() {
     std::cout << "Lista wyczyszczona." << std::endl;
 }
 
+// --- IMPLEMENTACJA METOD ITERATORA ---
+template <typename T>
+ListIterator<T> LinkedList<T>::begin() {
+
+    return ListIterator<T>(head);
+}
+
+template <typename T>
+ListIterator<T> LinkedList<T>::end() {
+
+    return ListIterator<T>(nullptr);
+}
 
 // --- POPRAWKA BŁĘDU LINKERA ---
 template class LinkedList<int>;
 template class Node<int>;
+template class ListIterator<int>;

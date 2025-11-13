@@ -88,7 +88,7 @@ int main() {
     std::cout << "--------------------" << std::endl;
 
 
-    // --- NOWY TEST ---
+    // -- 6 TEST ---
     std::cout << "Test 6: Czyszczenie listy (clear)" << std::endl;
     indexList.display_forward(); // Powinno być: 100 -> 150 -> 300
     
@@ -110,5 +110,37 @@ int main() {
     
     std::cout << "--------------------" << std::endl;
 
-    return 0;
+
+// --- NOWY TEST ---
+
+std::cout << "Test 8: Iterator (petla for)" << std::endl;
+LinkedList<int> iterList;
+iterList.push_back(10);
+iterList.push_back(20);
+iterList.push_back(30);
+
+std::cout << "Wyswietlanie petla 'for' oparta na iteratorze:" << std::endl;
+
+for (ListIterator<int> it = iterList.begin(); it != iterList.end(); ++it) {
+    std::cout << *it << " "; // Operator *
+}
+std::cout << std::endl;
+std::cout << "--------------------" << std::endl;
+
+
+std::cout << "Test 9: Nastepny / Poprzedni element" << std::endl;
+ListIterator<int> demoIt = iterList.begin(); // iterator 'demoIt' wskazuje na 10
+
+std::cout << "Biezacy element: " << *demoIt << std::endl; // Powinno być 10
+++demoIt; // Przechodzi do następnego (operator++)
+std::cout << "Nastepny element to: " << *demoIt << std::endl; // Powinno być 20
+
+++demoIt; // Przechodzi do następnego (wskazuje na 30)
+std::cout << "Nastepny element to: " << *demoIt << std::endl; // Powinno być 30
+
+--demoIt; // Przechodzi do poprzedniego (operator--)
+std::cout << "Poprzedni element to: " << *demoIt << std::endl; // Powinno być 20
+std::cout << "--------------------" << std::endl;
+
+return 0;
 }

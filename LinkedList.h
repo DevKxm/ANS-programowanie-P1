@@ -1,9 +1,11 @@
 #pragma once
 #include "Node.h"
+#include "Iterator.h" 
 #include <iostream> 
 
 template <typename T>
 class LinkedList {
+    
 // --- SEKCJA PRYWATNA ---
 private:
     Node<T>* head;
@@ -11,7 +13,7 @@ private:
     int size;
 
     /**
-     * @brief Zwraca wskaźnik na węzeł pod podanym indeksem
+     * @brief Zwraca wskaźnik na węzeł pod podanym indeksem.
      */
     Node<T>* get_node(int index);
 
@@ -29,9 +31,13 @@ public:
     void pop_back();
     void pop_front();
     void remove_at(int index);
-    void clear(); // NOWA METODA
-    
+    void clear(); 
+
     // Metody wyświetlające
     void display_forward();
     void display_backward();
+    
+    // --- METODY ITERATORA ---
+    ListIterator<T> begin();
+    ListIterator<T> end();
 };
