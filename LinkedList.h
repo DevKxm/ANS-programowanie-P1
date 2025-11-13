@@ -13,22 +13,18 @@ public:
     LinkedList();
     ~LinkedList();
 
-
     /**
-     * @brief Dodaje element na koniec listy
-     * @param data Wartość do dodania.
+     * @brief Dodaje element na koniec listy.
      */
     void push_back(T data);
 
     /**
-     * @brief Wyświetla całą listę od początku do końca 
+     * @brief Wyświetla całą listę od początku do końca.
      */
     void display_forward();
 
-    // --- NOWE METODY ---
     /**
      * @brief Dodaje element na początek listy.
-     * @param data Wartość do dodania.
      */
     void push_front(T data);
 
@@ -36,5 +32,14 @@ public:
      * @brief Wyświetla całą listę od końca do początku.
      */
     void display_backward();
-    
+
+    /**
+     * @brief Usuwa element z początku listy.
+     */
+    void pop_front();
+
+    /**
+     * @brief Usuwa element z końca listy.
+     */
+    void pop_back();
 };

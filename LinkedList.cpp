@@ -69,6 +69,63 @@ void LinkedList<T>::display_backward() {
     std::cout << "NULL" << std::endl;
 }
 
+// Implementacja //
+
+template <typename T>
+void LinkedList<T>::pop_front() {
+
+    if (head == nullptr) {
+        std::cout << "Lista jest pusta, nie mozna usunac." << std::endl;
+        return; 
+    }
+
+    size--;
+
+    Node<T>* temp = head;
+
+
+    if (head == tail) {
+        // Lista staje się pusta
+        head = nullptr;
+        tail = nullptr;
+    } else {
+
+        head = head->pNext;
+        // Nowy 'head' nie ma już elementu poprzedniego
+        head->pPrev = nullptr;
+    }
+
+    delete temp;
+}
+
+template <typename T>
+void LinkedList<T>::pop_back() {
+
+    if (tail == nullptr) { // lub (head == nullptr)
+        std::cout << "Lista jest pusta, nie mozna usunac." << std::endl;
+        return; 
+    }
+
+    size--;
+
+    Node<T>* temp = tail;
+
+
+    if (head == tail) {
+        // Lista staje się pusta
+        head = nullptr;
+        tail = nullptr;
+    } else {
+
+        tail = tail->pPrev;
+        // Nowy 'tail' nie ma już elementu następnego
+        tail->pNext = nullptr;
+    }
+
+    //Zzwolnienie pamięci po starym 'tail'
+    delete temp;
+}
+
 // --- POPRAWKA BŁĘDU LINKERA ---
 template class LinkedList<int>;
 template class Node<int>;
