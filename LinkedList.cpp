@@ -239,6 +239,15 @@ void LinkedList<T>::clear() {
     std::cout << "Lista wyczyszczona." << std::endl;
 }
 
+
+// --- NOWA DOPISANA METODA ---
+template <typename T>
+bool LinkedList<T>::isEmpty() {
+    // Lista jest pusta, jeśli 'head' (lub 'size') jest 0
+    return head == nullptr;
+}
+
+
 // --- IMPLEMENTACJA METOD ITERATORA ---
 template <typename T>
 ListIterator<T> LinkedList<T>::begin() {

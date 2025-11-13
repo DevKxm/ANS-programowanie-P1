@@ -21,6 +21,7 @@ private:
 public:
     LinkedList();
     ~LinkedList();
+    
 
     // Metody dodające
     void push_back(T data);
@@ -36,7 +37,11 @@ public:
     // Metody wyświetlające
     void display_forward();
     void display_backward();
+
+    bool isEmpty(); // dopisana deklaracja
     
+
+
     // --- METODY ITERATORA ---
     ListIterator<T> begin();
     ListIterator<T> end();
