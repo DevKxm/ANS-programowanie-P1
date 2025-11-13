@@ -1,22 +1,27 @@
 #pragma once
 #include "Node.h"
+#include <iostream> 
 
 template <typename T>
 class LinkedList {
 private:
-    Node<T>* head; // Wskaźnik na pierwszy element listy
-    Node<T>* tail; // Wskaźnik na ostatni element listy
-    int size;      // Licznik elementów
+    Node<T>* head;
+    Node<T>* tail;
+    int size;
 
 public:
-    /**
-     * @brief Konstruktor domyślny.
-     */
     LinkedList();
-
-    /**
-     * @brief Destruktor (posprząta pamięć).
-     */
     ~LinkedList();
 
+    // --- NOWE METODY ---
+    /**
+     * @brief Dodaje element na koniec listy (wymóg: Dodaj element na koniec listy)
+     * @param data Wartość do dodania.
+     */
+    void push_back(T data);
+
+    /**
+     * @brief Wyświetla całą listę od początku do końca (wymóg: Wyświetl całą listę)
+     */
+    void display_forward();
 };
