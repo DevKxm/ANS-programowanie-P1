@@ -248,6 +248,14 @@ bool LinkedList<T>::isEmpty() {
 }
 
 
+// --- NOWA DOPISANA METODA getSize ---
+
+template <typename T>
+int LinkedList<T>::getSize() {
+    return size;
+}
+
+
 // --- IMPLEMENTACJA METOD ITERATORA ---
 template <typename T>
 ListIterator<T> LinkedList<T>::begin() {
@@ -260,6 +268,7 @@ ListIterator<T> LinkedList<T>::end() {
 
     return ListIterator<T>(nullptr);
 }
+
 
 // --- POPRAWKA BŁĘDU LINKERA ---
 template class LinkedList<int>;

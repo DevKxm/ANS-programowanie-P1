@@ -21,6 +21,7 @@ private:
 public:
     LinkedList();
     ~LinkedList();
+    int getSize();
     
 
     // Metody dodające
