@@ -13,15 +13,28 @@ public:
     LinkedList();
     ~LinkedList();
 
-    // --- NOWE METODY ---
+
     /**
-     * @brief Dodaje element na koniec listy (wymóg: Dodaj element na koniec listy)
+     * @brief Dodaje element na koniec listy
      * @param data Wartość do dodania.
      */
     void push_back(T data);
 
     /**
-     * @brief Wyświetla całą listę od początku do końca (wymóg: Wyświetl całą listę)
+     * @brief Wyświetla całą listę od początku do końca 
      */
     void display_forward();
+
+    // --- NOWE METODY ---
+    /**
+     * @brief Dodaje element na początek listy.
+     * @param data Wartość do dodania.
+     */
+    void push_front(T data);
+
+    /**
+     * @brief Wyświetla całą listę od końca do początku.
+     */
+    void display_backward();
+    
 };
